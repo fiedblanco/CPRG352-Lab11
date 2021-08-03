@@ -1,13 +1,13 @@
-DROP SCHEMA IF EXISTS `notesdb`;
-CREATE SCHEMA IF NOT EXISTS `notesdb` DEFAULT CHARACTER SET latin1;
-USE `notesdb`;
+DROP SCHEMA IF EXISTS `notesdb11`;
+CREATE SCHEMA IF NOT EXISTS `notesdb11` DEFAULT CHARACTER SET latin1;
+USE `notesdb11`;
 
-CREATE TABLE IF NOT EXISTS `notesdb`.`role` (
+CREATE TABLE IF NOT EXISTS `notesdb11`.`role` (
   `role_id` INT(11) NOT NULL,
   `role_name` VARCHAR(25) NOT NULL,
   PRIMARY KEY (`role_id`));
 
-CREATE TABLE IF NOT EXISTS `notesdb`.`user` (
+CREATE TABLE IF NOT EXISTS `notesdb11`.`user` (
   `email` VARCHAR(40) NOT NULL,
   `active` TINYINT(1) NOT NULL DEFAULT '1',
   `first_name` VARCHAR(20) NOT NULL,
@@ -40,6 +40,8 @@ INSERT INTO `user` (`email`,`active`,`first_name`,`last_name`,`password`,`role`)
 	VALUES ('sait.cprg.352+anne@gmail.com', true, 'Anne','Annerson', 'password', 2);
 INSERT INTO `user` (`email`,`active`,`first_name`,`last_name`,`password`,`role`)
 	VALUES ('sait.cprg.352+barb@gmail.com', true, 'Barb','Barber', 'password', 2);
+INSERT INTO `user` (`email`,`active`,`first_name`,`last_name`,`password`,`role`)
+	VALUES ('forsaitdemo@gmail.com', true, 'demo','demo', 'password', 2);
 
 INSERT INTO `note` (`Title`, `Contents`, `Owner`)
     VALUES ('Quote #1', 'Writing is nature''s way of letting you know how sloppy your thinking is.', 'sait.cprg.352+anne@gmail.com');
@@ -47,3 +49,5 @@ INSERT INTO `note` (`Title`, `Contents`, `Owner`)
     VALUES ('Another quote', '"Java is to JavaScript as ham is to hamster." -  Jeremy Keith', 'sait.cprg.352+anne@gmail.com');
 INSERT INTO `note` (`Title`, `Contents`, `Owner`)
     VALUES ('Barb''s Note', 'Anne should not see this note.', 'sait.cprg.352+barb@gmail.com');
+INSERT INTO `note` (`Title`, `Contents`, `Owner`)
+    VALUES ('Barb''s Note 4', 'Anne should not see this note.', 'sait.cprg.352+barb@gmail.com');
